@@ -1,0 +1,227 @@
+@import 'tailwindcss';
+
+@source '../**/*.blade.php';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+/* Composants du Design System */
+@layer components {
+  /* Bouton Principal (Deep Slate) */
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: var(--radius-lg);
+    border: none;
+    transition: opacity 0.15s ease, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    opacity: 0.92;
+  }
+  .btn-primary:active {
+    transform: scale(0.99);
+  }
+
+  /* Bouton Secondaire (Contour hairline) */
+  .btn-secondary {
+    background-color: #ffffff;
+    color: var(--color-primary);
+    border: 1px solid var(--color-border-hairline);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 11px 24px;
+    border-radius: var(--radius-lg);
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  .btn-secondary:hover {
+    border-color: var(--color-border-hover);
+    background-color: var(--color-border-section);
+  }
+
+  /* Bouton Accent / Don (Luminous Azure) */
+  .btn-accent-donate {
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: var(--radius-lg);
+    border: none;
+    transition: opacity 0.15s ease, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  .btn-accent-donate:hover {
+    opacity: 0.92;
+  }
+  .btn-accent-donate:active {
+    transform: scale(0.99);
+  }
+
+  /* Carte / Conteneur (Surface Level 2) */
+  .card-fp {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border-hairline);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.02);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card-fp:hover {
+    border-color: var(--color-border-hover);
+    box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.05);
+  }
+
+  /* Section shading (Surface Level 1) */
+  .section-shaded {
+    background-color: var(--color-border-section);
+  }
+
+  /* Badge / Chip éditorial */
+  .chip-fp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--color-border-section);
+    color: #334155;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+  }
+  .chip-fp .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background-color: var(--color-tertiary);
+  }
+  .chip-fp .dot.azure {
+    background-color: var(--color-secondary);
+  }
+
+  /* Champ de saisie */
+  .input-fp {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: var(--color-primary);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: var(--radius-lg);
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .input-fp::placeholder {
+    color: #94a3b8;
+  }
+  .input-fp:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+  }
+
+  /* Case à cocher / Radio */
+  .checkbox-fp {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-sm);
+    background-color: #ffffff;
+    appearance: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+  }
+  .checkbox-fp:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  /* Métriques d'impact */
+  .metric-fp .value {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.025em;
+    color: var(--color-primary);
+  }
+  @media (min-width: 768px) {
+    .metric-fp .value {
+      font-size: 28px;
+    }
+  }
+  .metric-fp .label {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-neutral);
+  }
+
+  /* Barre de progression */
+  .progress-track {
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-border-section);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background-color: var(--color-secondary);
+    border-radius: var(--radius-full);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+main > :first-child {
+  margin-top: 0 !important;
+}
+
+main > :last-child {
+  margin-bottom: 0 !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
