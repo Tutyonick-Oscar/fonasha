@@ -9,15 +9,15 @@
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
                     <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
                         <div class="max-w-2xl">
-                            <div class="flex items-center gap-space-xs mb-space-sm">
+                            {{-- <div class="flex items-center gap-space-xs mb-space-sm">
                                 <span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
                                 <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Récits
                                     &amp; Publications</span>
                                 <span class="text-outline-variant">•</span>
                                 <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Sud-Kivu,
                                     RDC</span>
-                            </div>
-                            <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Actualités
+                            </div> --}}
+                            <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-wide py-space-sm">Actualités
                                 &amp; Récits de Terrain</h1>
                             <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm leading-relaxed">
                                 Chroniques documentées sur la dynamique solidaire des associations villageoises
@@ -25,24 +25,12 @@
                                 ménages d'Uvira.
                             </p>
                         </div>
-                        <!-- Navigation par filtres légers -->
-                        <div class="flex flex-wrap items-center gap-space-xs pt-space-sm lg:pt-0">
-                            <button
-                                class="px-space-md py-space-xs rounded-xl font-label-md text-label-md bg-surface-container-high text-on-surface transition-colors">Tous
-                                les articles</button>
-                            <button
-                                class="px-space-md py-space-xs rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">Réseaux
-                                AVEC</button>
-                            <button
-                                class="px-space-md py-space-xs rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">Agro-vivrier</button>
-                            <button
-                                class="px-space-md py-space-xs rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">Rapports</button>
-                        </div>
+                        
                     </div>
                 </div>
             </section>
             <!-- GRAND ARTICLE À LA UNE (ASOCIATION AVEC) -->
-            <section class="w-full bg-surface-container-lowest pb-space-xl">
+            <section class="w-full bg-surface-container-lowest pb-space-xl md:pt-4">
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
                     <article
                         class="group relative bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
@@ -68,9 +56,7 @@
                                             class="material-symbols-outlined text-[18px] text-secondary">calendar_today</span>
                                         <time class="font-body-sm text-body-sm text-on-surface-variant"
                                             datetime="2024-04-12">12 Avril 2024</time>
-                                        <span class="text-outline-variant">•</span>
-                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Lecture : 5
-                                            min</span>
+                                        
                                     </div>
                                     <h2
                                         class="font-headline-md text-headline-md text-on-surface leading-tight tracking-tight group-hover:text-secondary transition-colors">
@@ -83,21 +69,7 @@
                                         producteurs de mutualiser leur fonds de roulement. Bilan d'un cycle réussi et
                                         perspectives pour Mulongwe et Kilomoni.
                                     </p>
-                                    <!-- Métriques d'impact associées -->
-                                    <div class="grid grid-cols-2 gap-space-sm pt-space-xs">
-                                        <div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm">
-                                            <span
-                                                class="font-headline-sm text-headline-sm text-on-surface block font-bold">20</span>
-                                            <span class="font-label-sm text-label-sm text-outline">Groupes
-                                                autonomes</span>
-                                        </div>
-                                        <div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm">
-                                            <span
-                                                class="font-headline-sm text-headline-sm text-secondary block font-bold">+520</span>
-                                            <span class="font-label-sm text-label-sm text-outline">Ménages
-                                                intégrés</span>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                                 <div class="pt-space-lg">
                                     <a class="inline-flex items-center gap-space-xs font-label-md text-label-md text-on-surface group-hover:text-secondary font-semibold transition-colors"
@@ -112,16 +84,32 @@
                     </article>
                 </div>
             </section>
+
+            <!-- Navigation par filtres légers -->
+            <section class="w-full bg-surface-container-lowest pb-space-lg">
+                <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
+                    <div class="flex items-center gap-space-sm overflow-x-auto pb-space-xs">
+                        <!-- Lien actif (Tous) -->
+                        <a href="#" class="px-space-md py-2 rounded-md font-label-md text-label-md bg-secondary text-on-secondary shadow-sm whitespace-nowrap">Tous</a>
+                        <!-- Liens inactifs -->
+                        @foreach(['Agro-vivrier', 'Santé & Droits', 'Éducation'] as $category)
+                            <a href="#" class="px-space-md py-2 rounded-md font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors whitespace-nowrap">
+                                {{ $category }}
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+
             <!-- GRILLE DES 3 ARTICLES RÉCENTS -->
             <section class="w-full bg-surface-container-low/40 py-space-xl">
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
                     <div class="flex items-center justify-between mb-space-lg">
                         <div>
-                            <span
-                                class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Perspectives
-                                récentes</span>
-                            <h3 class="font-headline-md text-headline-md text-on-surface tracking-tight">Dépêches &amp;
-                                actions locales</h3>
+                            
+                            <h3 class="font-headline-md text-headline-md text-on-surface tracking-tight lower">
+                                Articles Récents
+                            </h3>
                         </div>
                         <span class="font-body-sm text-body-sm text-on-surface-variant hidden sm:inline-block">3
                             publications validées</span>
@@ -230,107 +218,29 @@
                     </div>
                 </div>
             </section>
-            <!-- ESPACE TRANSPARENCE & TÉLÉCHARGEMENT DES RAPPORTS (Loi 004/2001) -->
-            <section class="w-full bg-surface-container-lowest py-space-xl">
-                <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
-                    <div class="bg-surface-container-low rounded-xl p-space-lg lg:p-space-xl">
-                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-lg">
-                            <div class="max-w-xl">
-                                <div class="flex items-center gap-space-xs mb-1">
-                                    <span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
-                                    <span
-                                        class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Gouvernance
-                                        légale</span>
-                                </div>
-                                <h3 class="font-headline-md text-headline-md text-on-surface tracking-tight">
-                                    Transparence &amp; Rapports Officiels</h3>
-                                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                                    Conformément à la <strong>Loi n° 004/2001</strong> régissant les associations sans
-                                    but lucratif en RDC, la FONASHA met à disposition du public et des bailleurs ses
-                                    états certifiés.
-                                </p>
-                            </div>
-                            <div class="flex items-center gap-space-xs text-outline">
-                                <span class="material-symbols-outlined text-[20px]">lock_open</span>
-                                <span class="font-label-sm text-label-sm">Audits et bilans en libre consultation</span>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-                            <!-- Document 1 -->
-                            <div
-                                class="bg-surface-container-lowest p-space-md rounded-xl flex items-center justify-between shadow-sm hover:shadow transition-shadow">
-                                <div class="flex items-center gap-space-md min-w-0">
-                                    <div
-                                        class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
-                                        <span
-                                            class="material-symbols-outlined text-secondary text-[22px]">description</span>
-                                    </div>
-                                    <div class="truncate">
-                                        <h5 class="font-label-md text-label-md text-on-surface truncate">Rapport Annuel
-                                            d'Activités 2023</h5>
-                                        <p class="font-body-sm text-body-sm text-outline truncate">Bilan des 20 AVEC,
-                                            projets vivriers &amp; bénéficiaires (PDF • 3.2 Mo)</p>
-                                    </div>
-                                </div>
-                                <a class="shrink-0 p-space-xs rounded-lg hover:bg-surface-container text-on-surface hover:text-secondary transition-colors"
-                                    download="" href="#" title="Télécharger le rapport">
-                                    <span class="material-symbols-outlined text-[20px]">download</span>
-                                </a>
-                            </div>
-                            <!-- Document 2 -->
-                            <div
-                                class="bg-surface-container-lowest p-space-md rounded-xl flex items-center justify-between shadow-sm hover:shadow transition-shadow">
-                                <div class="flex items-center gap-space-md min-w-0">
-                                    <div
-                                        class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
-                                        <span
-                                            class="material-symbols-outlined text-secondary text-[22px]">account_balance</span>
-                                    </div>
-                                    <div class="truncate">
-                                        <h5 class="font-label-md text-label-md text-on-surface truncate">États
-                                            Financiers &amp; Affectation des Dons</h5>
-                                        <p class="font-body-sm text-body-sm text-outline truncate">Exercice clos au 31
-                                            décembre 2023 (PDF • 1.8 Mo)</p>
-                                    </div>
-                                </div>
-                                <a class="shrink-0 p-space-xs rounded-lg hover:bg-surface-container text-on-surface hover:text-secondary transition-colors"
-                                    download="" href="#" title="Télécharger l'état financier">
-                                    <span class="material-symbols-outlined text-[20px]">download</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            
             <!-- INSCRIPTION NEWSLETTER SUR UNE SEULE LIGNE ÉPURÉE -->
-            <section class="w-full bg-surface-container-lowest pb-space-xl">
+            {{-- <section class="w-full bg-surface-container-lowest py-space-xl">
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
                     <div class="py-space-lg px-space-md md:px-space-xl bg-surface-container-low/60 rounded-xl">
-                        <form class="flex flex-col md:flex-row items-center justify-between gap-space-md"
-                            onsubmit="event.preventDefault(); alert('Votre adresse a été enregistrée avec succès. Merci de suivre la FONASHA.');">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-space-md">
                             <div class="flex items-center gap-space-sm w-full md:w-auto">
                                 <span class="material-symbols-outlined text-secondary text-[24px] shrink-0">mail</span>
                                 <div>
-                                    <p class="font-label-md text-label-md text-on-surface font-semibold">Lettre de
-                                        terrain</p>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Un compte-rendu
-                                        succinct par trimestre, sans superflu.</p>
+                                    <p class="font-label-md text-label-md text-on-surface font-semibold">
+                                        Newsletter FONASHA
+                                    </p>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                        Recevez nos actualités et récits de terrain directement dans votre boîte
+                                        mail.
+                                    </p>
                                 </div>
                             </div>
-                            <div class="flex items-center w-full md:w-auto max-w-md gap-space-xs">
-                                <input
-                                    class="w-full h-10 px-space-md rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary shadow-sm"
-                                    placeholder="votre.email@exemple.cd" required="" type="email" />
-                                <button
-                                    class="shrink-0 h-10 px-space-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 active:scale-[0.99] transition-all"
-                                    type="submit">
-                                    S'inscrire
-                                </button>
-                            </div>
-                        </form>
+                            <livewire:newsletter-form />
+                        </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
         </div>
     </main>
 
