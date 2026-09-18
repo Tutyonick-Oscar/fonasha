@@ -38,15 +38,10 @@
                             <!-- Image narrative de terrain -->
                             <div
                                 class="lg:col-span-7 relative min-h-[340px] lg:min-h-[460px] overflow-hidden bg-surface-dim">
-                                <img class="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500 ease-out"
+                                <img class="w-full h-full object-cover "
                                     data-alt="Photographie éditoriale lumineuse d'une réunion collective d'un réseau AVEC à Uvira au Sud-Kivu. Un groupe de femmes congolaises assises sous une varangue aérée, tenant des registres de comptabilité communautaire et un coffret métallique vert émeraude, souriantes et attentives. Éclairage naturel doux du matin africain, tons organiques de terre battue et tissus pagnes colorés sobres."
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7BgUJ0Mp3zlN_azB3V9A9Uo4RzolHeHbjlNSYvSUKPN62xTyU0CrwGUlrINKSUz4ix4kGZJqEcGgKGVRDcreyoxNsA3IN7C3idIPhb1NwkLRQvM52zksV0In5Sku5sjGknxOLRJsZAQMbXNvMUfP3N2bPsBppupeWefTxN4gxfOFfCz8gffF0jze-g9KzZGz9U8Bz-_we7T_uBkgZSTrcM-WsjaaT_G_YkKf7CMdLOef3jg6DGMK0wA" />
-                                <div class="absolute top-space-md left-space-md">
-                                    <span
-                                        class="px-space-md py-space-xs rounded-full font-label-sm text-label-sm bg-surface-container-lowest/90 backdrop-blur-md text-on-surface shadow-sm">
-                                        À la une • Économie communautaire
-                                    </span>
-                                </div>
+                                
                             </div>
                             <!-- Contenu texte à forte lisibilité -->
                             <div class="lg:col-span-5 p-space-lg lg:p-space-xl flex flex-col justify-between">
@@ -59,7 +54,7 @@
                                         
                                     </div>
                                     <h2
-                                        class="font-headline-md text-headline-md text-on-surface leading-tight tracking-tight group-hover:text-secondary transition-colors">
+                                        class="cursor-pointer font-headline-md text-headline-md text-on-surface leading-tight tracking-tight group-hover:text-secondary transition-colors">
                                         Comment les 20 réseaux AVEC de la FONASHA renforcent l'autonomie de plus de 500
                                         ménages à Uvira
                                     </h2>

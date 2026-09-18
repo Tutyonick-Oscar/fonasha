@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" href="{{ asset('images/logo_fonasha.jpeg') }}" type="image/x-icon">
     <title>
         @yield('title', 'FONASHA ASBL — Fondation Maman Na\'Abwe Shabani')
     </title>

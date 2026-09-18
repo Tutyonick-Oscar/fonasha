@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\View\View;
+use App\Models\TeamMember;
 
 class TeamController extends Controller
 {
@@ -11,6 +12,9 @@ class TeamController extends Controller
      */
     public function index(): View
     {
-        return view('team');
+        $members = TeamMember::where('is_active', true)->get();
+        return view('team',[
+            'members' => $members
+        ]);
     }
 }

@@ -17,7 +17,7 @@
                         <div class="lg:col-span-7 flex flex-col space-y-space-lg">
 
                             <h1
-                                class="font-display text-headline-lg lg:text-display text-on-surface tracking-tight max-w-2xl">
+                                class="font-display text-headline-lg lg:text-display text-on-surface tracking-tight max-w-2xl lg:-mt-20">
                                 Agir pour l'autonomie des femmes et l'avenir des enfants au Sud-Kivu.
                             </h1>
                             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
