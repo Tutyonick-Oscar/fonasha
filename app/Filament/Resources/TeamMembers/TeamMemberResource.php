@@ -20,6 +20,8 @@ class TeamMemberResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    protected static ?string $label = "Equipe";
+
     public static function form(Schema $schema): Schema
     {
         return TeamMemberForm::configure($schema);
