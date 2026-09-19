@@ -32,8 +32,8 @@
                         <div
                             class="md:col-span-8 overflow-hidden rounded-xl bg-surface-container shadow-sm h-80 sm:h-96 relative">
                             <img class="w-full h-full object-cover"
-                                data-alt="Photographie documentaire bienveillante et lumineuse montrant des femmes congolaises réunies en cercle sous un abri ombragé à Uvira, au bord du lac Tanganyika, échangeant lors d'une séance communautaire d'entraide. Teintes naturelles douces, tonalité bleu ardoise sobre, éclat solaire chaleureux d'après-midi, respectueuse et sereine."
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgUxybD8B-3cywAzSU-g9IvRDeJnD34g2s8uXimtw0-Sfgs9xxxnLkPh_zw2N7STSAexRcLKXQ8_ZLsYSpDQH20msnIQGCGlgC_0SwfTOVEKmc8heN-Y3YQX1eI__PV1C4Wm3CrlCSnjTVTfz5dQ8b4URWSXxGr3_VWyRBk3fs5XHrzAR68MzaKR59SIOprYZul9FUzT9qotJiWmxfqrO9mRE_gy3XY5C8hU1X0EhiSKE91-b3RNPlkQ" />
+                                data-alt="fonasha"
+                                src="{{ asset('images/femmes_fonasha.jpeg') }}" />
                             <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent">
                             </div>
                             {{-- <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-on-primary">

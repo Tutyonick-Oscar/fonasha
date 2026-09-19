@@ -45,6 +45,7 @@ class Blog extends Model
     {
         return [
             'statut' => BlogType::class,
+            'running_date' => 'date'
         ];
     }
 }

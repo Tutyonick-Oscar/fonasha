@@ -39,8 +39,8 @@
                                 </p>
                                 <div
                                     class="mt-space-md pt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
-                                    <span class="material-symbols-outlined text-[18px]">verified</span>
-                                    <span>Agrément officiel RDC : Réf. n° 26/100/GP/SK</span>
+                                    {{-- <span class="material-symbols-outlined text-[18px]">verified</span> --}}
+                                    {{-- <span>Agrément officiel RDC : Réf. n° 26/100/GP/SK</span> --}}
                                 </div>
                             </div>
                             {{-- <div class="bg-surface-container-low rounded-xl p-space-lg">
@@ -107,35 +107,45 @@
                             </div>
                         </div>
                         <div class="lg:col-span-7">
-                            <div class="bg-surface-container-lowest rounded-xl p-space-lg lg:p-space-xl shadow-sm">
+                            <div class="bg-surface-container-lowest rounded-xl p-space-lg lg:p-space-xl border-[1px]">
                                 <h2 class="font-headline-md text-headline-md text-on-surface tracking-tight mb-space-xs">
                                     Envoyez un message
                                 </h2>
                                 <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">
                                     Remplissez les champs ci-dessous. Un responsable de la fondation vous recontactera
-                                    sous 48 heures ouvrées.
+                                    sous 48 heures.
                                 </p>
-                                <form class="space-y-space-md" id="contact-form"
-                                    onsubmit="event.preventDefault(); document.getElementById('success-message').classList.remove('hidden'); this.reset();">
+                                <form class="space-y-space-md" id="contact-form" method="POST" action="{{ route('contact.store') }}">
+                                    @csrf
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
                                         <div class="space-y-1">
                                             <label class="font-label-md text-label-md text-on-surface block"
                                                 for="full-name">
                                                 Nom complet <span class="text-error">*</span>
                                             </label>
-                                            <input
-                                                class="w-full px-space-md py-space-sm bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container transition-all"
+                                            <input name="fullname"
+                                                class="w-full px-space-md py-space-sm rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline border-[1px] focus:border-none outline-none focus:bg-surface-container transition-all"
                                                 id="full-name" placeholder="Ex. Sarah Mukamba" required=""
                                                 type="text" />
+                                            @error('fullname')
+                                                <small class="text-[crimson]">
+                                                    {{ $message }}
+                                                </small>
+                                            @enderror
                                         </div>
                                         <div class="space-y-1">
                                             <label class="font-label-md text-label-md text-on-surface block" for="email">
                                                 Adresse e-mail <span class="text-error">*</span>
                                             </label>
-                                            <input
-                                                class="w-full px-space-md py-space-sm bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container transition-all"
+                                            <input name="email"
+                                                class="w-full px-space-md py-space-sm rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline border-[1px] focus:border-none outline-none focus:bg-surface-container transition-al"
                                                 id="email" placeholder="nom@organisation.org" required=""
                                                 type="email" />
+                                            @error('email')
+                                                <small class="text-[crimson]">
+                                                    {{ $message }}
+                                                </small>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
@@ -143,16 +153,21 @@
                                             <label class="font-label-md text-label-md text-on-surface block" for="phone">
                                                 Téléphone (optionnel)
                                             </label>
-                                            <input
-                                                class="w-full px-space-md py-space-sm bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container transition-all"
+                                            <input name="phone"
+                                                class="w-full px-space-md py-space-sm rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline border-[1px] focus:border-none outline-none focus:bg-surface-container transition-al"
                                                 id="phone" placeholder="+243 ..." type="tel" />
+                                            @error('phone')
+                                                <small class="text-[crimson]">
+                                                    {{ $message }}
+                                                </small>
+                                            @enderror
                                         </div>
                                         <div class="space-y-1">
                                             <label class="font-label-md text-label-md text-on-surface block" for="subject">
                                                 Objet de votre échange <span class="text-error">*</span>
                                             </label>
-                                            <select
-                                                class="w-full px-space-md py-space-sm bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface focus:outline-none focus:bg-surface-container transition-all cursor-pointer"
+                                            <select name="object"
+                                                class="w-full px-space-md py-space-sm rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline border-[1px] focus:border-none outline-none focus:bg-surface-container transition-al cursor-pointer"
                                                 id="subject" required="">
                                                 <option disabled="" selected="" value="">Sélectionnez une
                                                     option</option>
@@ -164,17 +179,26 @@
                                                 <option value="beneficiaire">Demande d'accompagnement local</option>
                                                 <option value="autre">Autre demande générale</option>
                                             </select>
+                                            @error('object')
+                                                <small class="text-[crimson]">
+                                                    {{ $message }}
+                                                </small>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="space-y-1">
                                         <label class="font-label-md text-label-md text-on-surface block" for="message">
-                                            Message détaillé <span class="text-error">*</span>
+                                            Message <span class="text-error">*</span>
                                         </label>
-                                        <textarea
-                                            class="w-full px-space-md py-space-sm bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container transition-all resize-y"
-                                            id="message"
-                                            placeholder="Présentez votre requête, le contexte de votre structure ou vos questions spécifiques..."
+                                        <textarea name="message"
+                                            class="w-full px-space-md py-space-sm border-[1px] rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline outline-none focus:bg-surface-container transition-all resize-y"
+                                            id="message" placeholder="Présentez votre requête, le contexte de votre structure ou vos questions spécifiques..."
                                             required="" rows="5"></textarea>
+                                        @error('message')
+                                            <small class="text-[crimson]">
+                                                {{ $message }}
+                                            </small>
+                                        @enderror
                                     </div>
                                     <div
                                         class="pt-space-xs flex flex-col sm:flex-row items-center justify-between gap-space-md">
@@ -188,12 +212,14 @@
                                             <span class="material-symbols-outlined text-[18px]">send</span>
                                         </button>
                                     </div>
+                                    @if (session()->has('success'))
                                     <div class="hidden p-space-md rounded-lg bg-surface-container text-secondary flex items-start gap-space-sm"
                                         id="success-message">
                                         <span class="material-symbols-outlined text-[20px]">check_circle</span>
                                         <span class="font-body-md text-body-md text-on-surface">Votre message a été
                                             transmis avec succès. Le secrétariat vous répondra sous peu.</span>
                                     </div>
+                                    @endif
                                 </form>
                             </div>
                         </div>

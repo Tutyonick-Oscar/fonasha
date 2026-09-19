@@ -22,7 +22,7 @@
                             </h1>
                             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
                                 Un accompagnement holistique axé sur l’épargne solidaire (AVEC), l'autonomie agricole et
-                                la protection des mineurs vulnérables à Uvira.
+                                la protection des enfants vulnérables à Uvira.
                             </p>
                             <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
                                 <a class="inline-flex items-center justify-center px-space-xl py-3.5 rounded-xl font-label-md text-label-md bg-on-surface text-surface-container-lowest shadow-sm hover:opacity-90 transition-all"
@@ -51,8 +51,8 @@
                                 <div
                                     class="rounded-xl overflow-hidden shadow-md bg-surface-container-low aspect-[4/5] relative">
                                     <img class="w-full h-full object-cover"
-                                        data-alt="A portrait in natural diffused daylight of a Congolese woman artisan leader in Uvira, South Kivu, wearing elegant local patterned fabric, smiling gently in front of a community workshop, clean composition, soft neutral tones, high editorial quality, dignified and hopeful"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtv7V9jBH4V5hRXf5mK9Lt0Z9hx_gSW5L0a4Vz-QLJJI4L9KHA6cj_C0keAcNpDaaxeCcINk7zWeaX-Y-wnzhsS7XFSMd4tqift3uz4TxXpNmHjuhJBuy-giQxTiIfyaTe66lZM8gQvY-m0dScR_Hyi0GBZNoJaTFSS_vdXatNS9donmfZBTpRNJDHeSGGDYy28nydFWqpV9OFDgJtqB5G09_yA4Jj5dzHz2oPBfOwyG3QPtCscjXbyg" />
+                                        data-alt="hero photo"
+                                        src="{{ asset('images/table_ronde_fonasha.jpeg') }}" />
                                     <div
                                         class="absolute inset-0 bg-gradient-to-t from-primary-container/70 via-transparent to-transparent">
                                     </div>

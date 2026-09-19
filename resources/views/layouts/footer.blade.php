@@ -15,7 +15,7 @@
                      <!-- Facebook -->
                      <a href="#"
                          class="w-10 h-10 rounded-full bg-on-surface/10  transition-all duration-200 flex items-center justify-center group"
-                         target="_blank" rel="noopener noreferrer">
+                          rel="noopener noreferrer">
                          <svg class="w-5 h-5 text-[var(--surface-border)]  transition-colors" fill="currentColor"
                              viewBox="0 0 24 24">
                              <path
@@ -26,7 +26,7 @@
                      <!-- X (Twitter) -->
                      <a href="#"
                          class="w-10 h-10 rounded-full bg-on-surface/10  transition-all duration-200 flex items-center justify-center group"
-                         target="_blank" rel="noopener noreferrer">
+                          rel="noopener noreferrer">
                          <svg class="w-5 h-5 text-[var(--surface-border)]  transition-colors" fill="currentColor"
                              viewBox="0 0 24 24">
                              <path
@@ -35,7 +35,7 @@
                      </a>
                       <a href="#"
                          class="w-10 h-10 rounded-full bg-on-surface/10  transition-all duration-200 flex items-center justify-center group"
-                         target="_blank" rel="noopener noreferrer">
+                          rel="noopener noreferrer">
                          <svg class="w-5 h-5 text-[var(--surface-border)]  transition-colors" fill="currentColor"
                              viewBox="0 0 24 24">
                              <path

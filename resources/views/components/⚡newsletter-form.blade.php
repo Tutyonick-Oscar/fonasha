@@ -29,9 +29,10 @@ new class extends Component {
 
 <div>
     <form wire:submit.prevent="save" class="space-y-3">
+        @csrf
         <div class="relative">
             <input type="email" wire:model="email" placeholder="Votre addresse mail" required
-                class="w-full px-4 py-3 bg-on-surface/10 border border-on-surface/20 rounded-[var(--radius-lg)] text-on-surface placeholder-on-surface/50 focus:outline-none focus:border-on-surface/50 focus:ring-1 focus:ring-on-surface/30 transition-all duration-200 text-sm font-body-md pr-[150px] overflow-x-auto"
+                class="w-full px-4 py-3 bg-on-surface/10 border border-on-surface/20 rounded-[var(--radius-lg)] text-on-surface placeholder-on-surface/50 outline-none focus:border-on-surface/50 focus:ring-1 focus:ring-on-surface/30 transition-all duration-200 text-sm font-body-md pr-[150px] overflow-x-auto"
                 style="white-space: nowrap; text-overflow: clip;">
 
             <button type="submit" wire:loading.attr="disabled"
