@@ -1,14 +1,15 @@
- <header
-     class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-     <div class="h-20 max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between">
-         <div class="flex items-center gap-space-md">
-             <img alt="Logo" class="h-8 w-auto object-contain lg:h-16"
-                 src="{{ asset('images/logo.png') }}" /><a
-                 class="flex flex-col" data-path="accueil" href="{{ route('home') }}"><span
-                     class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">FONASHA ASBL</span>
-                    </a>
-         </div>
-         <nav class="hidden md:flex items-center gap-space-xs p-1 rounded-xl bg-surface-container-low/50">
+<header x-data="{ open: false }"
+    class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between">
+        <div class="flex items-center gap-space-md">
+            <img alt="Logo" class="h-8 w-auto object-contain lg:h-16" src="{{ asset('images/logo.png') }}" />
+            <a class="flex flex-col" data-path="accueil" href="{{ route('home') }}">
+                <span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">FONASHA ASBL</span>
+            </a>
+        </div>
+
+        {{-- Desktop Navigation --}}
+        <nav class="hidden md:flex items-center gap-space-xs p-1 rounded-xl bg-surface-container-low/50">
             @php
                 $activeClasses = "px-space-md py-space-sm transition-colors bg-surface-container text-on-surface font-semibold rounded-xl";
                 $inactiveClasses = "px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors rounded-xl";
@@ -19,11 +20,31 @@
             <a href="{{ route('blogs') }}" class="{{ request()->routeIs('blogs') ? $activeClasses : $inactiveClasses }}" @if(request()->routeIs('blogs')) aria-current="page" @endif>Blog</a>
             <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? $activeClasses : $inactiveClasses }}" @if(request()->routeIs('contact')) aria-current="page" @endif>Contact</a>
         </nav>
-         <div class="flex items-center gap-space-md"><a
-                 class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-sm rounded-xl font-label-md text-label-md bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant transition-all"
-                 data-path="soutenir-notre-action" href="#">Soutenir notre action</a>
-             {{-- <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
-                     class="material-symbols-outlined text-on-primary text-[18px]">person</span></div> --}}
-         </div>
-     </div>
- </header>
+
+        {{-- Mobile Hamburger Button --}}
+        <button @click="open = !open" class="md:hidden p-2 text-on-surface">
+            <span class="material-symbols-outlined text-[24px]" x-text="open ? 'close' : 'menu'">menu</span>
+        </button>
+
+        <div class="hidden sm:flex items-center gap-space-md">
+            <a class="inline-flex items-center justify-center px-space-lg py-space-sm rounded-xl font-label-md text-label-md bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant transition-all"
+                data-path="soutenir-notre-action" href="#">Soutenir notre action</a>
+        </div>
+    </div>
+
+    {{-- Mobile Menu --}}
+    <nav x-show="open" x-cloak
+        class="md:hidden bg-surface-container-lowest border-t border-surface-variant p-margin-mobile flex flex-col gap-space-sm"
+        @click.away="open = false">
+        @php
+            $mobileClasses = "px-space-md py-space-md font-label-md text-label-md text-on-surface rounded-xl hover:bg-surface-container-high";
+        @endphp
+        <a href="{{ route('home') }}" class="{{ $mobileClasses }}">Accueil</a>
+        <a href="{{ route('about') }}" class="{{ $mobileClasses }}">À propos</a>
+        <a href="{{ route('team') }}" class="{{ $mobileClasses }}">Équipe</a>
+        <a href="{{ route('blogs') }}" class="{{ $mobileClasses }}">Blog</a>
+        <a href="{{ route('contact') }}" class="{{ $mobileClasses }}">Contact</a>
+        <a class="mt-space-md inline-flex items-center justify-center px-space-lg py-space-sm rounded-xl font-label-md text-label-md bg-secondary text-on-secondary"
+            href="#">Soutenir notre action</a>
+    </nav>
+</header>

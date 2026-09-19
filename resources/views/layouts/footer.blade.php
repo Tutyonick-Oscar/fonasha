@@ -86,7 +86,7 @@
                  <p class="hover:text-on-surface transition-colors" data-path="mentions-legales">Protéger</p>
                  <p class="hover:text-on-surface transition-colors" data-path="statuts">Autonomiser </p>
                  <p class="hover:text-on-surface transition-colors" data-path="politique-de-confidentialite">
-                     Accompagner durablement
+                     Accompagner
                  </p>
              </div>
          </div>
