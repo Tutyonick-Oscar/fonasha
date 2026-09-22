@@ -1,10 +1,13 @@
 @extends('layouts.base')
+@section('scripts')
+    <script src="{{ asset('js/animations.js') }}"></script>
+@endsection
 @section('title', 'FONASHA ASBL — A propos de nous')
 @section('content')
 
     <main class="w-full pt-20 bg-surface-container-lowest min-h-screen">
         <div class="flex flex-col w-full">
-            <section class="relative w-full py-16 lg:py-24 bg-surface-container-lowest overflow-hidden">
+            <section class="reveal-section relative w-full py-16 lg:py-24 bg-surface-container-lowest overflow-hidden">
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
                     <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-space-lg pb-space-xl">
                         <div class="max-w-2xl space-y-space-sm">
@@ -31,8 +34,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md pt-space-md">
                         <div
                             class="md:col-span-8 overflow-hidden rounded-xl bg-surface-container shadow-sm h-80 sm:h-96 relative">
-                            <img class="w-full h-full object-cover"
-                                data-alt="fonasha"
+                            <img class="w-full h-full object-cover" data-alt="fonasha"
                                 src="{{ asset('images/femmes_fonasha.jpeg') }}" />
                             <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent">
                             </div>
@@ -70,7 +72,7 @@
                     </div>
                 </div>
             </section>
-            <section class="w-full py-16 lg:py-20 bg-surface-container-low/40">
+            <section class="reveal-section w-full py-16 lg:py-20 bg-surface-container-low/40">
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg lg:gap-space-xl">
                         <div
@@ -125,7 +127,7 @@
                     </div>
                 </div>
             </section>
-            <section class="w-full py-16 lg:py-24 bg-surface-container-lowest">
+            <section class="reveal-section w-full py-16 lg:py-24 bg-surface-container-lowest">
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
                     <div class="max-w-2xl mb-16 space-y-3">
                         <span
@@ -230,7 +232,7 @@
                     </div>
                 </div>
             </section>
-            <section class="w-full py-16 lg:py-24 bg-surface-container-low/50">
+            <section class="reveal-section w-full py-16 lg:py-24 bg-surface-container-low/50">
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl items-start">
                         <div class="lg:col-span-5 space-y-4">
@@ -335,7 +337,7 @@
                     </div>
                 </div>
             </section>
-            <section class="w-full py-16 bg-surface-container-lowest border-t-0">
+            <section class="reveal-section w-full py-16 bg-surface-container-lowest border-t-0">
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
                     <div
                         class="p-8 lg:p-12 rounded-xl bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-lg">

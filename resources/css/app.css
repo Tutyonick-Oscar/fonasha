@@ -4,6 +4,24 @@
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
+/* Animations */
+@layer utilities {
+  .reveal-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.9s ease-out;
+  }
+  .reveal-section.animate-reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Carousel */
+  .carousel-item {
+    transition: opacity 1s ease-in-out;
+  }
+}
+
 /* Composants du Design System */
 @layer components {
   /* Bouton Principal (Deep Slate) */

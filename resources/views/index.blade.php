@@ -1,10 +1,16 @@
 @extends('layouts.base')
+@section('scripts')
+    <script src="{{ asset('js/carousel.js') }}">
+    </script>
+    <script src="{{ asset('js/animations.js') }}">
+    </script>
+@endsection
 @section('content')
     <main class="w-full pt-20 bg-surface-container-lowest min-h-screen">
         <div class="flex flex-col w-full">
             <!-- Hero Section Bleed & Clean Atmosphere -->
             <section
-                class="relative w-full -mt-20 pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-surface-container-lowest">
+                class="reveal-section relative w-full -mt-20 pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-surface-container-lowest">
                 <div
                     class="absolute top-0 right-1/4 w-96 h-96 bg-secondary-fixed/40 rounded-full blur-3xl pointer-events-none -z-10">
                 </div>
@@ -48,23 +54,15 @@
                         <!-- Hero Visual / Contextual Imagery -->
                         <div class="lg:col-span-5 relative">
                             <div class="relative mx-auto max-w-md lg:max-w-none">
-                                <div
-                                    class="rounded-xl overflow-hidden shadow-md bg-surface-container-low aspect-[4/5] relative">
-                                    <img class="w-full h-full object-cover"
-                                        data-alt="hero photo"
-                                        src="{{ asset('images/table_ronde_fonasha.jpeg') }}" />
+                                <div class="rounded-xl overflow-hidden shadow-md bg-surface-container-low aspect-[4/5] relative"
+                                    data-carousel 
+                                    data-images='["{{ asset('images/table_ronde_fonasha.jpeg') }}", "{{ asset('images/fonasha_children.jpeg') }}", "{{ asset('images/fonasha_maiz.jpeg') }}"]'>
+                                    <div class="carousel-container relative w-full h-full">
+                                        <!-- Carousel items injected by carousel.js -->
+                                    </div>
                                     <div
                                         class="absolute inset-0 bg-gradient-to-t from-primary-container/70 via-transparent to-transparent">
                                     </div>
-                                    {{-- <div class="absolute bottom-0 left-0 right-0 p-space-lg text-on-primary">
-                                        <span
-                                            class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider block">Impact
-                                            sur le terrain</span>
-                                        <p class="font-headline-sm text-headline-sm font-semibold mt-1">Uvira &amp;
-                                            Bassin du Lac Tanganyika</p>
-                                        <p class="font-body-sm text-body-sm text-on-primary/80 mt-0.5">Renforcement de
-                                            la résilience socio-économique des ménages.</p>
-                                    </div> --}}
                                 </div>
                                 <!-- Floating metric pill -->
                                 <div
@@ -87,7 +85,7 @@
                 </div>
             </section>
             <!-- Key Metrics Strip -->
-            <section class="w-full bg-surface-container-low/50 py-space-xl">
+            <section class="reveal-section w-full bg-surface-container-low/50 py-space-xl">
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-space-lg lg:gap-space-xl">
                         <div class="flex flex-col space-y-1">
@@ -129,7 +127,7 @@
                 </div>
             </section>
             <!-- 3 Essential Pillars -->
-            <section class="w-full py-24 bg-surface-container-lowest" id="piliers">
+            <section class="reveal-section w-full py-24 bg-surface-container-lowest" id="piliers">
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex flex-col space-y-space-xl">
                     <!-- Section Header -->
                     <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
@@ -249,7 +247,7 @@
                 </div>
             </section>
             <!-- Editorial Testimonial -->
-            <section class="w-full py-20 bg-surface-container-low/40">
+            <section class="reveal-section w-full py-20 bg-surface-container-low/40">
                 <div class="max-w-[1000px] mx-auto px-margin-mobile lg:px-margin">
                     <div
                         class="bg-surface-container-lowest rounded-xl p-space-xl lg:p-12 shadow-sm flex flex-col md:flex-row items-center gap-space-xl">
@@ -280,7 +278,7 @@
                 </div>
             </section>
             <!-- Clean Bottom Call to Action -->
-            <section class="w-full py-24 bg-surface-container-lowest">
+            <section class="reveal-section w-full py-24 bg-surface-container-lowest">
                 <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin">
                     <div
                         class="relative rounded-xl bg-primary-container text-on-primary p-space-xl lg:p-16 overflow-hidden">
