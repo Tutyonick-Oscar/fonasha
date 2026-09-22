@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 
-
 class BlogController extends Controller
 {
     /**
@@ -15,13 +14,14 @@ class BlogController extends Controller
      */
     public function index(Request $request): View
     {
-        $activeNews = Blog::where('active',true)->first();
-        $query = Blog::where('active',false);
+        $activeNews = Blog::where('active', true)->with(['category', 'user'])->first();
+        $query = Blog::where('active', false);
 
         if ($request->has('category')) {
-            
             $category = BlogCategory::where('name', $request->category)->first();
-            $query->where('blog_category_id', $category->id);
+            if ($category) {
+                $query->where('blog_category_id', $category->id);
+            }
         }
 
         $blogs = $query->with('category')->orderBy('created_at', 'desc')->paginate(3);
@@ -40,8 +40,12 @@ class BlogController extends Controller
      */
     public function show(string $slug): View
     {
-        $blog = Blog::where('slug', $slug)->firstOrFail();
-        $recentBlogs = Blog::where('id', '!=', $blog->id)->orderBy('created_at', 'desc')->limit(2)->get();
+        $blog = Blog::where('slug', $slug)->with(['category', 'user'])->firstOrFail();
+        $recentBlogs = Blog::where('id', '!=', $blog->id)
+            ->with('category')
+            ->orderBy('created_at', 'desc')
+            ->limit(2)
+            ->get();
 
         return view('blog_details', [
             'blog' => $blog,
