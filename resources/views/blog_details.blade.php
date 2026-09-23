@@ -83,9 +83,9 @@
                     </figure>
                 </div>
                 <div
-                    class="max-w-[980px] mx-auto  sm:px-gutter lg:px-0 space-y-space-xl pb-space-xl text-on-surface font-body-lg text-body-lg leading-relaxed">
+                    class="max-w-[980px] mx-auto px-margin-mobile sm:px-gutter lg:px-0 space-y-space-xl pb-space-xl text-on-surface font-body-lg text-body-lg leading-relaxed">
                     <div class="space-y-space-md">
-                        <div class="text-on-surface-variant font-body-md text-body-md leading-relaxed flex flex-col gap-4">
+                        <div class="text-on-surface-variant font-body-md text-body-md leading-relaxed flex flex-col gap-4 break-words overflow-hidden">
                             {!! str($blog->description)->markdown()->sanitizeHtml() !!}
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                                 <span class="material-symbols-outlined text-[18px]">share</span>
                                 <span class="text-on-surface font-semibold">Partager ce récit :</span>
                             </div>
-                            <div class="flex items-center gap-2" id="share-buttons">
+                            <div class="flex items-center gap-2 flex-wrap" id="share-buttons">
                                 <button
                                     class="px-space-md py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors flex items-center gap-1.5 shadow-sm"
                                     onclick="window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(document.title + ' ' + window.location.href), '_blank')"
